@@ -41,12 +41,19 @@
                 <div class="row">
                     <div class="col-2">
                         <div class="position-relative">
-                            <img class="w-100" id="recommendPictureBefore">
-                            <img class="w-100" id="recommendPicture">
+                            <a href="" class="movieHref">
+                                
+                                
+                                <img class="w-100" id="recommendPictureBefore">
+                                
+                                <img class="w-100" id="recommendPicture">
+
+                                <img src="img/shadow.png" class="w-100" id="recommendPictureShadow">
+                            </a>
                         </div>
                     </div>
                     <div class="col-10">
-                        <a href=""><h3><span id="recTitle"></span> <span id="recYear"></span></h3></a>
+                        <a href="" class="movieHref"><h3><span id="recTitle"></span> <span id="recYear"></span></h3></a>
                         <p id="recDesc"></p>
                     </div>
                 </div>
@@ -70,17 +77,33 @@
                     <span>rok</span>
                 </div>
                 <div class="row">
-                    <div class="movie col-6 col-sm-3 col-lg-2 col-xl-1" onmouseover='giveMoreInfo(0)' onmouseout="giveLessInfo(0)">
-                        <img class="w-100" src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
-                        <div class="moreInfo">
-                            <p>Jakis tytul</p>
-                            <p>Jakis opis</p>
+                    <div class="movie col-6 col-sm-3 col-lg-2 col-xl-1">
+                        <div  onmouseover='giveMoreInfo(0)'  onmouseout="giveLessInfo(0)">
+                            <img class="w-100" src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
+                            <div class="position-relative">
+                                <div class="moreInfo">
+                                    <div class="position-relative">
+                                        <div class="desc-image">
+                                            <img class="bg" src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
+                                        </div>
+                                        
+                                        <div class="desc-main">
+                                            <img src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
+                                            <h3>Tytuł filmu Tytuł <small>2003</small></h3>
+                                            <p>Przez świąteczny pośpiech ośmioletni Kevin zostaje sam w domu na Boże Narodzenie.</p>
+                                            <div class="cb"></div>
+                                        </div>
+                                        <div class="dark-bg">s</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="movie col-6 col-sm-3 col-lg-2 col-xl-1">
-                        <img class="w-100" src="https://i1.fdbimg.pl/x1/vhl8e8v1/400x580_qw7aph.jpg%20400w">
+                        <img class="w-100" src="https://i1.fdbimg.pl/x1/bk7zz9/400x580_kd38gs.jpg%20400w">
                     </div>
+
                     <div class="movie col-6 col-sm-3 col-lg-2 col-xl-1">
                         <img class="w-100" src="https://i1.fdbimg.pl/x1/bk7zz9/400x580_kd38gs.jpg%20400w">
                     </div>
@@ -200,6 +223,7 @@
             var moviesTitles = ['Kac vegas', 'Forest Gump', 'Zielona mila', 'Był sobie pies', 'Interstellar'];
             var moviesYears = [2013, 2017, 2006, 1997, 2021];
             var moviesDescs = ['Przez świąteczny pośpiech ośmioletni Kevin zostaje sam w domu na Boże Narodzenie.', 'Ekranizacja powieści Dana Browna. Tajemnicze morderstwo w Luwrze staje się kluczem do rozwiązania jednej z największych zagadek strzeżonych przez tajemnicze stowarzyszenie.', 'Podróż hobbita z Shire i jego ośmiu towarzyszy, której celem jest zniszczenie potężnego pierścienia pożądanego przez Czarnego Władcę - Saurona.', 'Rok 2004, siedziba władz lokalnych w irackiej Karbali, City Hall, zostaje zaatakowana przez Al-Kaidę i sadrystów. Grupa polskich oraz bułgarskich żołnierzy odpiera kolejne ataki.', 'By odzyskać swój dom, brzydki ogr z gadatliwym osłem wyruszają uwolnić piękną księżniczkę.'];
+            var moviesIds = [5, 3, 43, 12, 32];
 
             function onload()
             {
@@ -210,6 +234,12 @@
                 document.getElementById('recTitle').innerHTML = moviesTitles[mainRec];
                 document.getElementById('recYear').innerHTML = moviesYears[mainRec];
                 document.getElementById('recDesc').innerHTML = moviesDescs[mainRec];
+
+                var movieHref = document.getElementsByClassName('movieHref');
+
+                for (var i=0; i<movieHref.length; i++) {
+                    document.getElementsByClassName('movieHref')[i].href="film?id="+moviesIds[mainRec]+"&tytul="+moviesTitles[mainRec];
+                }
             }
 
             function podmienPolecane(which)
@@ -238,6 +268,12 @@
                     document.getElementById('recYear').innerHTML = moviesYears[which];
                     document.getElementById('recDesc').innerHTML = moviesDescs[which];
 
+                    var movieHref = document.getElementsByClassName('movieHref');
+
+                    for (var i=0; i<movieHref.length; i++) {
+                        document.getElementsByClassName('movieHref')[i].href="film?id="+moviesIds[which]+"&tytul="+moviesTitles[which];
+                    }
+
                     mainRec = which;
                 }
             }
@@ -245,13 +281,16 @@
             function giveMoreInfo(id)
             {
                 var id = id;
-                document.getElementsByClassName("moreInfo")[0].style.opacity="1";   
+                document.getElementsByClassName("moreInfo")[id].style.zIndex="1"; 
+                document.getElementsByClassName("moreInfo")[id].style.opacity="1";   
+                  
             }
 
             function giveLessInfo(id)
             {
                 var id = id;
-                document.getElementsByClassName("moreInfo")[0].style.opacity="0";   
+                document.getElementsByClassName("moreInfo")[id].style.opacity="0";  
+                document.getElementsByClassName("moreInfo")[id].style.zIndex="-10";  
             }
 
         </script>
