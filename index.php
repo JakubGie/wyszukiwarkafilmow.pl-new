@@ -5,6 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 		<title>Wyszukiwarka Filmów - Nie wiesz, co obejrzeć? Znajdź film!</title>
+
+        <link rel="shortcut icon" href="img/logo.png">
 		
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +21,7 @@
 	</head>
 	<body onload="onload()">
         <div class="header">
-            <a href="" class="text-wf">WyszukiwarkaFilmow.pl</a>
+            <a href="" class="text-wf"><img src="img/logo.png"></a>
 
             <div class="nav">
                 <a href="">Filmy</a>
@@ -77,6 +79,43 @@
                     <span>rok</span>
                 </div>
                 <div class="row">
+                    <?php
+                        $movieNumber = 0;
+                        for($i=1;$i<=12;$i++)
+                        {
+                            if($i>7)
+                                $place = "right";
+
+                            else
+                                $place = "left";
+
+                            echo '
+                                <div class="movie col-6 col-sm-3 col-lg-2 col-xl-1">
+                                <div  onmouseover="giveMoreInfo('.$movieNumber.')"  onmouseout="giveLessInfo('.$movieNumber.')">
+                                    <img class="w-100" src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
+                                    <div class="position-relative">
+                                        <div class="moreInfo moreInfo-'.$place.'">
+                                            <div class="position-relative">
+                                                <div class="desc-image">
+                                                    <img class="bg" src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
+                                                </div>
+                                                <div class="desc-main">
+                                                    <img class="'.$place.'" src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
+                                                    <h3>Tytuł filmu Tytuł  asdas dasdasda sdsadasd<small>2003</small></h3>
+                                                    <p>Młoda Sophie chciałaby zaprosić na swój ślub ojca, którego nigdy nie poznała. Na podstawie pamiętnika matki wyłania trzech potencjalnych kandydatów.</p>
+                                                    <a href="" class="button bg-wf">Oglądaj</a>
+                                                    <a href="" class="button bg-info2">Więcej informacji</a>
+                                                    <div class="cb"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            ';
+                            $movieNumber++;
+                        }
+                    ?>
                     <div class="movie col-6 col-sm-3 col-lg-2 col-xl-1">
                         <div  onmouseover='giveMoreInfo(0)'  onmouseout="giveLessInfo(0)">
                             <img class="w-100" src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
@@ -86,14 +125,14 @@
                                         <div class="desc-image">
                                             <img class="bg" src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
                                         </div>
-                                        
                                         <div class="desc-main">
                                             <img src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
-                                            <h3>Tytuł filmu Tytuł <small>2003</small></h3>
-                                            <p>Przez świąteczny pośpiech ośmioletni Kevin zostaje sam w domu na Boże Narodzenie.</p>
+                                            <h3>Tytuł filmu Tytuł  asdas dasdasda sdsadasd<small>2003</small></h3>
+                                            <p>Młoda Sophie chciałaby zaprosić na swój ślub ojca, którego nigdy nie poznała. Na podstawie pamiętnika matki wyłania trzech potencjalnych kandydatów.</p>
+                                            <a href="" class="button bg-wf">Oglądaj</a>
+                                            <a href="" class="button bg-info2">Więcej informacji</a>
                                             <div class="cb"></div>
                                         </div>
-                                        <div class="dark-bg">s</div>
                                     </div>
                                 </div>
                             </div>
@@ -101,41 +140,194 @@
                     </div>
 
                     <div class="movie col-6 col-sm-3 col-lg-2 col-xl-1">
-                        <img class="w-100" src="https://i1.fdbimg.pl/x1/bk7zz9/400x580_kd38gs.jpg%20400w">
+                        <div  onmouseover='giveMoreInfo(1)'  onmouseout="giveLessInfo(1)">
+                            <img class="w-100" src="https://i1.fdbimg.pl/x1/vhl8e8v1/400x580_qw7aph.jpg%20400w">
+                            <div class="position-relative">
+                                <div class="moreInfo">
+                                    <div class="position-relative">
+                                        <div class="desc-image">
+                                            <img class="bg" src="https://i1.fdbimg.pl/x1/vhl8e8v1/400x580_qw7aph.jpg%20400w">
+                                        </div>
+                                        <div class="desc-main">
+                                            <img src="https://i1.fdbimg.pl/x1/vhl8e8v1/400x580_qw7aph.jpg%20400w">
+                                            <h3>Tytuł filmu Tytuł  asdas dasdasda sdsadasd<small>2003</small></h3>
+                                            <p>Młoda Sophie chciałaby zaprosić na swój ślub ojca, którego nigdy nie poznała. Na podstawie pamiętnika matki wyłania trzech potencjalnych kandydatów.</p>
+                                            <a href="" class="button bg-wf">Oglądaj</a>
+                                            <a href="" class="button bg-info2">Więcej informacji</a>
+                                            <div class="cb"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="movie col-6 col-sm-3 col-lg-2 col-xl-1">
-                        <img class="w-100" src="https://i1.fdbimg.pl/x1/bk7zz9/400x580_kd38gs.jpg%20400w">
+                        <div  onmouseover='giveMoreInfo(2)'  onmouseout="giveLessInfo(2)">
+                            <img class="w-100" src="https://i1.fdbimg.pl/x1/bk7zz9/400x580_kd38gs.jpg%20400w">
+                            <div class="position-relative">
+                                <div class="moreInfo">
+                                    <div class="position-relative">
+                                        <div class="desc-image">
+                                            <img class="bg" src="https://i1.fdbimg.pl/x1/bk7zz9/400x580_kd38gs.jpg%20400w">
+                                        </div>
+                                        <div class="desc-main">
+                                            <img src="https://i1.fdbimg.pl/x1/bk7zz9/400x580_kd38gs.jpg%20400w">
+                                            <h3>Tytuł filmu Tytuł  asdas dasdasda sdsadasd<small>2003</small></h3>
+                                            <p>Młoda Sophie chciałaby zaprosić na swój ślub ojca, którego nigdy nie poznała. Na podstawie pamiętnika matki wyłania trzech potencjalnych kandydatów.</p>
+                                            <a href="" class="button bg-wf">Oglądaj</a>
+                                            <a href="" class="button bg-info2">Więcej informacji</a>
+                                            <div class="cb"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                     <div class="movie col-6 col-sm-3 col-lg-2 col-xl-1">
-                        <img class="w-100" src="https://i1.fdbimg.pl/x1/svqdkwq1/400x580_mn8rzl.jpg%20400w">
+                        <div  onmouseover='giveMoreInfo(3)'  onmouseout="giveLessInfo(3)">
+                            <img class="w-100" src="https://i1.fdbimg.pl/x1/svqdkwq1/400x580_mn8rzl.jpg%20400w">
+                            <div class="position-relative">
+                                <div class="moreInfo">
+                                    <div class="position-relative">
+                                        <div class="desc-image">
+                                            <img class="bg" src="https://i1.fdbimg.pl/x1/svqdkwq1/400x580_mn8rzl.jpg%20400w">
+                                        </div>
+                                        <div class="desc-main">
+                                            <img src="https://i1.fdbimg.pl/x1/svqdkwq1/400x580_mn8rzl.jpg%20400w">
+                                            <h3>Tytuł filmu Tytuł  asdas dasdasda sdsadasd<small>2003</small></h3>
+                                            <p>Młoda Sophie chciałaby zaprosić na swój ślub ojca, którego nigdy nie poznała. Na podstawie pamiętnika matki wyłania trzech potencjalnych kandydatów.</p>
+                                            <a href="" class="button bg-wf">Oglądaj</a>
+                                            <a href="" class="button bg-info2">Więcej informacji</a>
+                                            <div class="cb"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                     <div class="movie col-6 col-sm-3 col-lg-2 col-xl-1">
-                        <img class="w-100" src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
+                        <div  onmouseover='giveMoreInfo(4)'  onmouseout="giveLessInfo(4)">
+                            <img class="w-100" src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
+                            <div class="position-relative">
+                                <div class="moreInfo">
+                                    <div class="position-relative">
+                                        <div class="desc-image">
+                                            <img class="bg" src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
+                                        </div>
+                                        <div class="desc-main">
+                                            <img src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
+                                            <h3>Tytuł filmu Tytuł  asdas dasdasda sdsadasd<small>2003</small></h3>
+                                            <p>Młoda Sophie chciałaby zaprosić na swój ślub ojca, którego nigdy nie poznała. Na podstawie pamiętnika matki wyłania trzech potencjalnych kandydatów.</p>
+                                            <a href="" class="button bg-wf">Oglądaj</a>
+                                            <a href="" class="button bg-info2">Więcej informacji</a>
+                                            <div class="cb"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                     <div class="movie col-6 col-sm-3 col-lg-2 col-xl-1">
-                        <img class="w-100" src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
+                        <div  onmouseover='giveMoreInfo(5)'  onmouseout="giveLessInfo(5)">
+                            <img class="w-100" src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
+                            <div class="position-relative">
+                                <div class="moreInfo">
+                                    <div class="position-relative">
+                                        <div class="desc-image">
+                                            <img class="bg" src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
+                                        </div>
+                                        <div class="desc-main">
+                                            <img src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
+                                            <h3>Tytuł filmu Tytuł  asdas dasdasda sdsadasd<small>2003</small></h3>
+                                            <p>Młoda Sophie chciałaby zaprosić na swój ślub ojca, którego nigdy nie poznała. Na podstawie pamiętnika matki wyłania trzech potencjalnych kandydatów.</p>
+                                            <a href="" class="button bg-wf">Oglądaj</a>
+                                            <a href="" class="button bg-info2">Więcej informacji</a>
+                                            <div class="cb"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                     <div class="movie col-6 col-sm-3 col-lg-2 col-xl-1">
-                        <img class="w-100" src="https://i1.fdbimg.pl/x1/vhl8e8v1/400x580_qw7aph.jpg%20400w">
+                        <div  onmouseover='giveMoreInfo(6)'  onmouseout="giveLessInfo(6)">
+                            <img class="w-100" src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
+                            <div class="position-relative">
+                                <div class="moreInfo">
+                                    <div class="position-relative">
+                                        <div class="desc-image">
+                                            <img class="bg" src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
+                                        </div>
+                                        <div class="desc-main">
+                                            <img src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
+                                            <h3>Tytuł filmu Tytuł  asdas dasdasda sdsadasd<small>2003</small></h3>
+                                            <p>Młoda Sophie chciałaby zaprosić na swój ślub ojca, którego nigdy nie poznała. Na podstawie pamiętnika matki wyłania trzech potencjalnych kandydatów.</p>
+                                            <a href="" class="button bg-wf">Oglądaj</a>
+                                            <a href="" class="button bg-info2">Więcej informacji</a>
+                                            <div class="cb"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                     <div class="movie col-6 col-sm-3 col-lg-2 col-xl-1">
-                        <img class="w-100" src="https://i1.fdbimg.pl/x1/bk7zz9/400x580_kd38gs.jpg%20400w">
+                        <div  onmouseover='giveMoreInfo(7)'  onmouseout="giveLessInfo(7)">
+                            <img class="w-100" src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
+                            <div class="position-relative">
+                                <div class="moreInfo">
+                                    <div class="position-relative">
+                                        <div class="desc-image">
+                                            <img class="bg" src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
+                                        </div>
+                                        <div class="desc-main">
+                                            <img src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
+                                            <h3>Tytuł filmu Tytuł  asdas dasdasda sdsadasd<small>2003</small></h3>
+                                            <p>Młoda Sophie chciałaby zaprosić na swój ślub ojca, którego nigdy nie poznała. Na podstawie pamiętnika matki wyłania trzech potencjalnych kandydatów.</p>
+                                            <a href="" class="button bg-wf">Oglądaj</a>
+                                            <a href="" class="button bg-info2">Więcej informacji</a>
+                                            <div class="cb"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
                     <div class="movie col-6 col-sm-3 col-lg-2 col-xl-1">
-                        <img class="w-100" src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
+                        <div  onmouseover='giveMoreInfo(8)'  onmouseout="giveLessInfo(8)">
+                            <img class="w-100" src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
+                            <div class="position-relative">
+                                <div class="moreInfo">
+                                    <div class="position-relative">
+                                        <div class="desc-image">
+                                            <img class="bg" src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
+                                        </div>
+                                        <div class="desc-main">
+                                            <img src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
+                                            <h3>Tytuł filmu Tytuł  asdas dasdasda sdsadasd<small>2003</small></h3>
+                                            <p>Młoda Sophie chciałaby zaprosić na swój ślub ojca, którego nigdy nie poznała. Na podstawie pamiętnika matki wyłania trzech potencjalnych kandydatów.</p>
+                                            <a href="" class="button bg-wf">Oglądaj</a>
+                                            <a href="" class="button bg-info2">Więcej informacji</a>
+                                            <div class="cb"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="movie col-6 col-sm-3 col-lg-2 col-xl-1">
-                        <img class="w-100" src="https://i1.fdbimg.pl/x1/vhl8e8v1/400x580_qw7aph.jpg%20400w">
-                    </div>
-                    <div class="movie col-6 col-sm-3 col-lg-2 col-xl-1">
-                        <img class="w-100" src="https://i1.fdbimg.pl/x1/bk7zz9/400x580_kd38gs.jpg%20400w">
-                    </div>
-                    <div class="movie col-6 col-sm-3 col-lg-2 col-xl-1">
-                        <img class="w-100" src="https://i1.fdbimg.pl/x1/nvulpry1/400x580_ph6c6u.jpg%20400w">
-                    </div>
+
+                   
+
                     
 
+                    
                 </div>
                 <span>załaduj więcej</span>
                 <h2 class="mt-3">POPULARNE SERIALE</h2>
@@ -278,12 +470,12 @@
                 }
             }
 
+
             function giveMoreInfo(id)
             {
                 var id = id;
                 document.getElementsByClassName("moreInfo")[id].style.zIndex="1"; 
-                document.getElementsByClassName("moreInfo")[id].style.opacity="1";   
-                  
+                document.getElementsByClassName("moreInfo")[id].style.opacity="1";  
             }
 
             function giveLessInfo(id)

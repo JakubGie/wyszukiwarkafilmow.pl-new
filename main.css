@@ -27,6 +27,16 @@ a:hover
     color: #fff;
 }
 
+.bg-info2
+{
+    background-color: rgb(46, 88, 204);
+}
+
+.text-info2
+{
+    color: rgb(46, 88, 204);
+}
+
 .bg-wf
 {
     background-color: #ec4040;
@@ -64,6 +74,11 @@ a:hover
     margin-left: 10px;
 }
 
+.header .nav a:hover
+{
+    opacity: .8;
+}
+
 .header .nav > a:first-child
 {
     margin-left: 0px;
@@ -98,6 +113,7 @@ a:hover
 {
     height: 35px;
     vertical-align: middle;
+    margin-left: 10px;
 }
 
 .movie
@@ -114,14 +130,13 @@ a:hover
 .moreInfo
 {
     position: absolute;
-    top: -200px;
+    top: -220px;
     left: 0;
-    /*z-index: -100;*/
-    z-index: 20;
+    z-index: -100;
     width: 500px;
-    height: 270px;
+    height: 220px;
     overflow: hidden;
-    /*opacity: 0;*/
+    opacity: 0;
     -webkit-box-shadow: 0px 0px 22px 7px rgba(0, 0, 0, 1);
     -moz-box-shadow: 0px 0px 22px 7px rgba(0, 0, 0, 1);
     box-shadow: 0px 0px 22px 7px rgba(0, 0, 0, 1);
@@ -134,20 +149,14 @@ a:hover
     text-align: center;
 }
 
+.moreInfo-right
+{
+    left: -348px;
+}
+
 .moreInfo .desc-main small
 {
     font-size: 13px;
-}
-
-.moreInfo .dark-bg
-{
-    position: absolute;
-    left: 0;
-    top: 0;
-    text-align: left;
-    background-color:  rgb(20, 20, 20);
-    z-index: 19;
-    width: 100px;
 }
 
 .moreInfo img.bg
@@ -165,8 +174,6 @@ a:hover
 .moreInfo .desc-main
 {
     position: absolute;
-    left: 0;
-    top: 0;
     text-align: left;
 }
 
@@ -174,15 +181,40 @@ a:hover
 {
     height: 200px;
     margin: 10px 10px;
-    float: left;
     z-index: 22;
+    padding-right: 5px;
+}
+
+.moreInfo .desc-main img.left
+{
+    float: left;
+}
+
+
+.moreInfo .desc-main img.right
+{
+    float: right;
 }
 
 .moreInfo .desc-main h3
 {
     font-size: 23px;
-    margin-top: 20px;
+    margin-top: 15px;
     z-index: 1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.moreInfo .desc-main p
+{
+    padding: 0 25px;
+}
+
+.moreInfo .desc-main a.button
+{
+    padding: 5px 10px;
+    border-radius: 3px;
 }
 
 .shadow
