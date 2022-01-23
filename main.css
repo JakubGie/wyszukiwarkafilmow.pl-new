@@ -266,6 +266,18 @@ a:hover
     color: #fff;
     text-align: center;
     display: inline-block;
+    cursor: pointer;
+}
+
+.main .time-switch span:hover
+{
+    opacity: .7;
+}
+
+.main .time-switch span.checked:hover
+{
+    opacity: 1;
+    cursor: default;
 }
 
 .main span

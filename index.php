@@ -74,14 +74,14 @@
 
                 <div class="time-switch mb-2">
                     <span>dzień</span> 
-                    <span><b>tydzień</b></span> 
+                    <span class="checked"><b>tydzień</b></span> 
                     <span>miesiąc</span> 
                     <span>rok</span>
                 </div>
                 <div class="row">
                     <?php
                         $movieNumber = 1;
-                        for($i=1;$i<=36;$i++)
+                        for($i=1;$i<=34;$i++)
                         {
                             if($i>7)
                                 $place = "right";
@@ -115,9 +115,7 @@
                             ';
                             $movieNumber++;
                         }
-                    ?>
-
-                    
+                    ?> 
                 </div>
                 <span>załaduj więcej</span>
                 <h2 class="mt-3">POPULARNE SERIALE</h2>
@@ -137,6 +135,12 @@
 
             function onload()
             {
+                recommendMovies();
+                moreInfoWindows();
+            }
+
+            function recommendMovies()
+            {
                 document.getElementById('recommendPicture').src=moviesPosters[mainRec];
                 document.getElementById('rec'+mainRec).style="border:3px solid #fff";
                 document.getElementById('recommendBefore').style="background-image: url('"+moviesPosters[mainRec]+"')";
@@ -149,47 +153,6 @@
 
                 for (var i=0; i<movieHref.length; i++) {
                     document.getElementsByClassName('movieHref')[i].href="film?id="+moviesIds[mainRec]+"&tytul="+moviesTitles[mainRec];
-                }
-
-
-                // right-left movies
-
-                var how_many_movies = $('.movie').length;
-
-                var movieNumber = 1;
-                var movieRowNumber = 1;
-
-                if($(window).width()>=720)
-                {
-                    var how_many_in_row = 4;
-                    var from_number = 3;
-                }
-
-                if($(window).width()>=960)
-                {
-                    var how_many_in_row = 6;
-                    var from_number = 4;
-                }
-
-                if($(window).width()>=1200)
-                {
-                    var how_many_in_row = 12;
-                    var from_number = 8;
-                }
-
-                for(var i=1;i<=how_many_movies/how_many_in_row;i++)
-                {
-                    for(var i2=1;i2<=how_many_in_row;i2++)
-                    {
-                        console.log(movieRowNumber);
-                        if(movieRowNumber>=from_number & movieRowNumber<=how_many_in_row)
-                            document.getElementById('movie-div-'+movieNumber).classList.add("moreInfo-right");
-                        
-                        movieRowNumber++;
-                        movieNumber++;
-                        if(movieRowNumber==how_many_in_row+1)
-                            movieRowNumber = 1;
-                    }
                 }
             }
 
@@ -229,6 +192,46 @@
                 }
             }
 
+            function moreInfoWindows()
+            {
+                var how_many_movies = $('.movie').length;
+
+                var movieNumber = 1;
+                var movieRowNumber = 1;
+
+                if($(window).width()>=720)
+                {
+                    var how_many_in_row = 4;
+                    var from_number = 3;
+                }
+
+                if($(window).width()>=960)
+                {
+                    var how_many_in_row = 6;
+                    var from_number = 4;
+                }
+
+                if($(window).width()>=1200)
+                {
+                    var how_many_in_row = 12;
+                    var from_number = 8;
+                }
+
+                for(var i=1;i<=Math.ceil(how_many_movies/how_many_in_row);i++)
+                {
+                    for(var i2=1;i2<=how_many_in_row;i2++)
+                    {
+                        console.log(movieRowNumber);
+                        if(movieRowNumber>=from_number & movieRowNumber<=how_many_in_row)
+                            document.getElementById('movie-div-'+movieNumber).classList.add("moreInfo-right");
+                        
+                        movieRowNumber++;
+                        movieNumber++;
+                        if(movieRowNumber==how_many_in_row+1)
+                            movieRowNumber = 1;
+                    }
+                }
+            }
 
             function giveMoreInfo(id)
             {
