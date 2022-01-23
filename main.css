@@ -55,6 +55,21 @@ a:hover
     top: 0;
     background-color:  rgb(20, 20, 20);
     z-index: 200;
+    padding-bottom: 12px;
+    color: #fff;
+}
+
+.header .mobile
+{
+    text-align: center;
+    font-size: 35px;
+}
+
+.header .mobile i.fa-bars
+{
+    position: fixed;
+    right: 25px;
+    top: 20px;
 }
 
 .header a
@@ -77,6 +92,16 @@ a:hover
 .header .nav a:hover
 {
     opacity: .7;
+}
+
+.header .right-nav i
+{
+    cursor: pointer;
+}
+
+.header .right-nav a:hover, i:hover
+{
+    opacity: .8;
 }
 
 .header .nav > a:first-child
@@ -114,6 +139,27 @@ a:hover
     height: 35px;
     vertical-align: middle;
     margin-left: 10px;
+}
+
+.nav-mobile
+{
+    text-align: center;
+    padding-top: 10px;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.nav-mobile a
+{
+    font-size: 23px;
+    display: block;
+    padding: 3px;
+}
+
+.header .mobile
+{
+    display: none;
 }
 
 .movie
@@ -162,6 +208,7 @@ a:hover
 .moreInfo .desc-main p
 {
     padding: 0 25px;
+    width: 500px;
 }
 
 .moreInfo-right .desc-main p
@@ -375,6 +422,13 @@ img#recommendPictureBefore
     position: relative;
 }
 
+.footer
+{
+    color: #fff;
+    text-align: center;
+    padding: 30px 10px;
+}
+
 @media screen and (max-width:1400px)
 {
     .movie-list img
@@ -437,5 +491,20 @@ img#recommendPictureBefore
     .moreInfo
     {
         display: none !important;
+    }
+
+    .header .mobile
+    {
+        display: block;
+    }
+
+    .header
+    {
+        padding-bottom: 0;
+    }
+
+    .header .pc
+    {
+        display: none;
     }
 }

@@ -1,40 +1,14 @@
+<?php include 'elements/begining.php'; ?>
 <!DOCTYPE HTML>
-<html lang="pl">
+<html lang="pl-PL">
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Wyszukiwarka Filmów - Nie wiesz, co obejrzeć? Znajdź film!</title> 
 
-		<title>Wyszukiwarka Filmów - Nie wiesz, co obejrzeć? Znajdź film!</title>
-
-        <link rel="shortcut icon" href="img/logo.png">
-		
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-        <link rel="stylesheet" href="main.css">
-
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <?php include 'elements/head.php'; ?>
 	</head>
 	<body onload="onload()">
-        <div class="header">
-            <a href="" class="text-wf"><img src="img/logo.png"></a>
+        <?php include 'elements/brand.php'; ?>
 
-            <div class="nav">
-                <a href="">Filmy</a>
-                <a href="">Seriale</a>
-                <a href="">Losuj</a>
-            </div>
-
-            <div class="right-nav">
-                <i class="fas fa-search"></i>
-                <a href="">Logowanie</a>
-                <a href="" class="register">Rejestracja</a>
-            </div>
-        </div>
         <div class="recommend-rel">
             <div id="recommendBefore">
 
@@ -79,16 +53,10 @@
                     <span>rok</span>
                 </div>
                 <div class="row">
-                    <?php
+                    <?php 
                         $movieNumber = 1;
                         for($i=1;$i<=34;$i++)
                         {
-                            if($i>7)
-                                $place = "right";
-
-                            else
-                                $place = "left";
-
                             echo '
                                 <div class="movie col-6 col-sm-3 col-lg-2 col-xl-1">
                                 <div  onmouseover="giveMoreInfo('.$movieNumber.')"  onmouseout="giveLessInfo('.$movieNumber.')">
@@ -191,66 +159,12 @@
                     mainRec = which;
                 }
             }
-
-            function moreInfoWindows()
-            {
-                var how_many_movies = $('.movie').length;
-
-                var movieNumber = 1;
-                var movieRowNumber = 1;
-
-                if($(window).width()>=720)
-                {
-                    var how_many_in_row = 4;
-                    var from_number = 3;
-                }
-
-                if($(window).width()>=960)
-                {
-                    var how_many_in_row = 6;
-                    var from_number = 4;
-                }
-
-                if($(window).width()>=1200)
-                {
-                    var how_many_in_row = 12;
-                    var from_number = 8;
-                }
-
-                for(var i=1;i<=Math.ceil(how_many_movies/how_many_in_row);i++)
-                {
-                    for(var i2=1;i2<=how_many_in_row;i2++)
-                    {
-                        console.log(movieRowNumber);
-                        if(movieRowNumber>=from_number & movieRowNumber<=how_many_in_row)
-                            document.getElementById('movie-div-'+movieNumber).classList.add("moreInfo-right");
-                        
-                        movieRowNumber++;
-                        movieNumber++;
-                        if(movieRowNumber==how_many_in_row+1)
-                            movieRowNumber = 1;
-                    }
-                }
-            }
-
-            function giveMoreInfo(id)
-            {
-                var id = id;
-                document.getElementsByClassName("moreInfo")[id-1].style.zIndex="1"; 
-                document.getElementsByClassName("moreInfo")[id-1].style.opacity="1";  
-            }
-
-            function giveLessInfo(id)
-            {
-                var id = id;
-                document.getElementsByClassName("moreInfo")[id-1].style.opacity="0";  
-                document.getElementsByClassName("moreInfo")[id-1].style.zIndex="-10";  
-            }
-
         </script>
+
+        <?php include 'elements/footer.php'; ?>
+
+        <?php include 'elements/scripts.php'; ?>
         
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+        <?php include 'elements/end.php'; ?>
 	</body>
 </html>
