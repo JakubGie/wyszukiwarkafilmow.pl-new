@@ -1,6 +1,5 @@
 <?php
-    $polaczenie = @new mysqli('localhost', 'root', '', 'film');
-    $polaczenie->set_charset("utf8");
+    include 'elements/connection.php';
 
     $movieNumber = 1;
     $movieSeries = 1;
