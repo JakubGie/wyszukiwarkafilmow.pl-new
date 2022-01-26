@@ -73,7 +73,6 @@
     function giveMoreInfo(id)
     {
         var id = id;
-        console.log("movie-div-"+id);
         document.getElementsByClassName("movie-div-"+id)[0].style.zIndex="1"; 
         document.getElementsByClassName("movie-div-"+id)[0].style.opacity="1";  
     }

@@ -101,7 +101,7 @@ a:hover
 
 .header .right-nav a:hover, i:hover
 {
-    opacity: .8;
+    opacity: .7;
 }
 
 .header .nav > a:first-child
@@ -337,6 +337,16 @@ a:hover
 {
     color: #fff;
     text-align: center;
+}
+
+.load-more
+{
+    cursor: pointer;
+}
+
+.load-more:hover
+{
+    opacity: .7;
 }
 
 .recommend

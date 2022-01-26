@@ -1,10 +1,10 @@
 <?php
-    function loadMovie($query)
+    function loadMovie($query, $limit)
     {
         global $polaczenie;
         global $movieNumber;
         global $movieSeries;
-        $zapytanie = $polaczenie->query($query);
+        $zapytanie = $polaczenie->query($query." LIMIT ".$limit);
         
         echo '<div class="row series">';
 
@@ -29,11 +29,13 @@
                                             <img class="bg" src="'.$plakat.'">
                                         </div>
                                         <div class="desc-main">
-                                            <img src="'.$plakat.'">
-                                            <a href=""><h3>'.$tytul.' <small>'.$rok_produkcji.'</small></h3></a>
+                                            <a href="film?id='.$id.'&tytul='.$tytul.'">
+                                                <img src="'.$plakat.'">
+                                            </a>
+                                            <a href="film?id='.$id.'&tytul='.$tytul.'"><h3>'.$tytul.' <small>'.$rok_produkcji.'</small></h3></a>
                                             <p>'.$opis.'</p>
                                             <a href="" class="button bg-wf button-first">Oglądaj</a>
-                                            <a href="" class="button bg-info2">Więcej informacji</a>
+                                            <a href="film?id='.$id.'&tytul='.$tytul.'" class="button bg-info2">Więcej informacji</a>
                                             <div class="cb"></div>
                                         </div>
                                     </div>
@@ -46,9 +48,17 @@
             }
 
         echo '</div>';
+
+        echo '<span id="loadMore" class="load-more">załaduj więcej</span>';
+        echo '<div id="loadMore2">s</div>';
+
         $movieNumber=1;
 
         $movieSeries++;
     }
 
+
+
+
+    
 ?>
