@@ -132,6 +132,7 @@ a:hover
 {
     background-color: #fff;
     color: #000;
+    border-radius: 3px;
 }
 
 .header img
@@ -195,6 +196,11 @@ a:hover
     text-align: center;
 }
 
+.moreInfo h3
+{
+    display: inline-block;
+}
+
 .moreInfo-right
 {
     left: -410px !important;
@@ -202,7 +208,7 @@ a:hover
 
 .moreInfo-right h3
 {
-    padding: 0 15px;
+    padding: 0 18px;
 }
 
 .moreInfo .desc-main p

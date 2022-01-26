@@ -7,6 +7,8 @@
         <?php include 'elements/head.php'; ?>
 	</head>
 	<body onload="onload()">
+        <?php include 'elements/phpscripts.php'; ?>
+
         <?php include 'elements/brand.php'; ?>
 
         <div class="recommend-rel">
@@ -52,44 +54,12 @@
                     <span>miesiąc</span> 
                     <span>rok</span>
                 </div>
-                <div class="row">
-                    <?php 
-                        $movieNumber = 1;
-                        for($i=1;$i<=34;$i++)
-                        {
-                            echo '
-                                <div class="movie col-6 col-sm-3 col-lg-2 col-xl-1">
-                                <div  onmouseover="giveMoreInfo('.$movieNumber.')"  onmouseout="giveLessInfo('.$movieNumber.')">
-                                    <img class="w-100" src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
-                                    <div class="position-relative">
-                                        <div id="movie-div-'.$movieNumber.'" class="moreInfo">
-                                            <div class="position-relative">
-                                                <div class="desc-image">
-                                                    <img class="bg" src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
-                                                </div>
-                                                <div class="desc-main">
-                                                    <img src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w">
-                                                    <h3>Tytuł filmu Tytuł  asdas dasdasda sdsadasd<small>2003</small></h3>
-                                                    <p>Młoda Sophie chciałaby zaprosić na swój ślub ojca, którego nigdy nie poznała. Na podstawie pamiętnika matki wyłania trzech potencjalnych kandydatów.</p>
-                                                    <a href="" class="button bg-wf button-first">Oglądaj</a>
-                                                    <a href="" class="button bg-info2">Więcej informacji</a>
-                                                    <div class="cb"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            ';
-                            $movieNumber++;
-                        }
-                    ?> 
-                </div>
+                
+                <?php loadMovie('SELECT id, tytul, opis, rok_produkcji, plakat FROM filmy LIMIt 23'); ?> 
+
                 <span>załaduj więcej</span>
                 <h2 class="mt-3">POPULARNE SERIALE</h2>
-                <div class="row">
-                    
-                </div>
+                <?php loadMovie('SELECT id, tytul, opis, rok_produkcji, plakat FROM filmy LIMIt 8'); ?>
             </div>
         </div>
 
@@ -163,7 +133,7 @@
 
         <?php include 'elements/footer.php'; ?>
 
-        <?php include 'elements/scripts.php'; ?>
+        <?php include 'elements/jsscripts.php'; ?>
         
         <?php include 'elements/end.php'; ?>
 	</body>
