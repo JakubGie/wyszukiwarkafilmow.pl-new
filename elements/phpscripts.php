@@ -1,12 +1,16 @@
 <?php
-    function loadMovie($query, $limit)
+    function loadMovie($query, $limit, $series)
     {
         global $polaczenie;
         global $movieNumber;
         global $movieSeries;
+
+        if($series!=0)
+            $movieSeries = $series;
+        
         $zapytanie = $polaczenie->query($query." LIMIT ".$limit);
         
-        echo '<div class="row series">';
+        echo '<div class="row series series'.$movieSeries.'">';
 
             for($i=1;$i<=$zapytanie->num_rows;$i++)
             {
@@ -46,11 +50,11 @@
                 ';
                 $movieNumber++;
             }
+        echo '<span id="loadMore'.$movieSeries.'" class="load-more">załaduj więcej</span>';
 
         echo '</div>';
 
-        echo '<span id="loadMore" class="load-more">załaduj więcej</span>';
-        echo '<div id="loadMore2">s</div>';
+        
 
         $movieNumber=1;
 

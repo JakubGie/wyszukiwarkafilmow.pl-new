@@ -55,10 +55,17 @@
                     <span>rok</span>
                 </div>
                 
-                <?php loadMovie('SELECT id, tytul, opis, rok_produkcji, plakat FROM filmy', 23); ?> 
+                <?php loadMovie('SELECT id, tytul, opis, rok_produkcji, plakat FROM filmy', 23, 0); ?> 
 
                 
                 <h2 class="mt-3">POPULARNE SERIALE</h2>
+
+                <?php loadMovie('SELECT id, tytul, opis, rok_produkcji, plakat FROM filmy', 3, 0); ?> 
+
+                <h2 class="mt-3">POPULARNE SERIALE</h2>
+
+
+                <?php loadMovie('SELECT id, tytul, opis, rok_produkcji, plakat FROM filmy', 34, 0); ?> 
                 
             </div>
         </div>

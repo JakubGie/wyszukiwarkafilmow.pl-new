@@ -16,14 +16,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&display=swap" rel="stylesheet">
 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 <script>           
-    $(document).on('click', "#loadMore", function () {
-        $.post("ajax.php", {
-            operation: "loadMore"
+    $(document).on('click', "#loadMore1", function () {
+        $.post("elements/ajax.php", {
+            operation: "loadMore",
+            sql: 'SELECT id, tytul, opis, rok_produkcji, plakat FROM filmy',
+            limit: 43,
+            series: 1
         }, function(data){
-            $("#loadMore2").html(data);
+            $(".series1").html(data);
         });
     });
 </script>
