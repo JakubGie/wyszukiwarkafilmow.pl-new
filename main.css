@@ -196,11 +196,6 @@ a:hover
     text-align: center;
 }
 
-.moreInfo h3
-{
-    display: inline-block;
-}
-
 .moreInfo-right
 {
     left: -410px !important;

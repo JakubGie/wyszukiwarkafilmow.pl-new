@@ -55,17 +55,17 @@
                     <span>rok</span>
                 </div>
                 
-                <?php loadMovie('SELECT id, tytul, opis, rok_produkcji, plakat FROM filmy', 23, 0, 0); ?> 
+                <?php loadMovie("SELECT id, tytul, opis, rok_produkcji, plakat FROM filmy", 23, 0, 0); ?> 
 
                 
                 <h2 class="mt-3">POPULARNE SERIALE</h2>
 
-                <?php loadMovie('SELECT * FROM filmy WHERE "asd"="asd"', 3, 0, 0); ?> 
+                <?php loadMovie("SELECT * FROM filmy WHERE gatunek LIKE '%|4|%' ORDER BY ocena_imdb DESC",  10, 0, 0); ?> 
 
                 <h2 class="mt-3">POPULARNE SERIALE</h2>
 
 
-                <?php loadMovie('SELECT id, tytul, opis, rok_produkcji, plakat FROM filmy', 34, 0, 0); ?> 
+                <?php loadMovie("SELECT id, tytul, opis, rok_produkcji, plakat FROM filmy", 34, 0, 0); ?> 
                 
             </div>
         </div>

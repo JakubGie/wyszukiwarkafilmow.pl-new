@@ -16,6 +16,8 @@
         
         $zapytanie = $polaczenie->query($SQLquery);
 
+
+
         $how_many_movies_in_series[$movieSeries] = $zapytanie->num_rows;
         $sqlInSeries[$movieSeries] = $query;
 
@@ -39,16 +41,16 @@
                 echo '
                     <div class="movie col-6 col-sm-3 col-lg-2 col-xl-1">
                         <div  onmouseover="giveMoreInfo(\''.$movieSeries."-".$movieNumber.'\')"  onmouseout="giveLessInfo(\''.$movieSeries."-".$movieNumber.'\')">
-                            <img class="w-100" src="'.$plakat.'">
+                            <img class="w-100" src="'.$plakat.'" alt="'.$tytul.' '.$rok_produkcji.'">
                             <div class="position-relative">
                                 <div class="moreInfo movie-div-number-'.$movieNumber.' movie-div-series-'.$movieSeries.' movie-div-'.$movieSeries.'-'.$movieNumber.'">
                                     <div class="position-relative">
                                         <div class="desc-image">
-                                            <img class="bg" src="'.$plakat.'">
+                                            <img class="bg" src="'.$plakat.'" alt="'.$tytul.' '.$rok_produkcji.'">
                                         </div>
                                         <div class="desc-main">
                                             <a href="film?id='.$id.'&tytul='.$tytul.'">
-                                                <img src="'.$plakat.'">
+                                                <img src="'.$plakat.'" alt="'.$tytul.' '.$rok_produkcji.'">
                                             </a>
                                             <a href="film?id='.$id.'&tytul='.$tytul.'"><h3>'.$tytul.' <small>'.$rok_produkcji.'</small></h3></a>
                                             <p>'.$opis.'</p>
