@@ -1,16 +1,28 @@
 <?php
-    function loadMovie($query, $limit, $series)
+    function loadMovie($query, $limit, $series, $loadMore)
     {
         global $polaczenie;
-        global $movieNumber;
         global $movieSeries;
+        global $how_many_movies_in_series;
+        global $sqlInSeries;
 
         if($series!=0)
             $movieSeries = $series;
         
-        $zapytanie = $polaczenie->query($query." LIMIT ".$limit);
+        if($loadMore!=0)
+            $limit+=$loadMore;
+
+        $SQLquery = $query." LIMIT ".$limit;
         
-        echo '<div class="row series series'.$movieSeries.'">';
+        $zapytanie = $polaczenie->query($SQLquery);
+
+        $how_many_movies_in_series[$movieSeries] = $zapytanie->num_rows;
+        $sqlInSeries[$movieSeries] = $query;
+
+
+        if($series==0)
+            echo '<div class="series series'.$movieSeries.'">';
+        echo '<div class="row">';
 
             for($i=1;$i<=$zapytanie->num_rows;$i++)
             {
@@ -21,6 +33,8 @@
                 $opis = $row['opis'];
                 $rok_produkcji = $row['rok_produkcji'];
                 $plakat = $row['plakat'];
+
+                $movieNumber = $i;
 
                 echo '
                     <div class="movie col-6 col-sm-3 col-lg-2 col-xl-1">
@@ -50,13 +64,14 @@
                 ';
                 $movieNumber++;
             }
-        echo '<span id="loadMore'.$movieSeries.'" class="load-more">załaduj więcej</span>';
 
-        echo '</div>';
-
+        if($limit==$zapytanie->num_rows)
+            echo '<span id="loadMore'.$movieSeries.'" class="load-more">załaduj więcej</span>';
         
 
-        $movieNumber=1;
+        echo '</div>';
+        if($series==0)
+            echo '</div>';
 
         $movieSeries++;
     }

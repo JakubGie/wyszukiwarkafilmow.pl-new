@@ -6,7 +6,7 @@
 
         if($_POST['operation']=="loadMore")
         {
-            loadMovie($_POST['sql'], $_POST['limit'], $_POST['series']);
+            loadMovie($_POST['sql'], $_POST['limit'], $_POST['series'], 4);
 
             echo '
                 <script>
