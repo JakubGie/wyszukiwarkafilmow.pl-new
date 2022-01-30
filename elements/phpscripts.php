@@ -41,7 +41,9 @@
                 echo '
                     <div class="movie col-6 col-sm-3 col-lg-2 col-xl-1">
                         <div  onmouseover="giveMoreInfo(\''.$movieSeries."-".$movieNumber.'\')"  onmouseout="giveLessInfo(\''.$movieSeries."-".$movieNumber.'\')">
-                            <img class="w-100" src="'.$plakat.'" alt="'.$tytul.' '.$rok_produkcji.'">
+                            <a href="film?id='.$id.'&tytul='.$tytul.'">
+                                <img class="w-100" src="'.$plakat.'" alt="'.$tytul.' '.$rok_produkcji.'">
+                            </a>
                             <div class="position-relative">
                                 <div class="moreInfo movie-div-number-'.$movieNumber.' movie-div-series-'.$movieSeries.' movie-div-'.$movieSeries.'-'.$movieNumber.'">
                                     <div class="position-relative">

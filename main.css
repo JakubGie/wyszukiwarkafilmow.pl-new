@@ -357,6 +357,25 @@ img#recommendPictureBefore
     top: 0;
 }
 
+.big-buttons
+{
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+a.big-button
+{
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    display: inline-block;
+}
+
+a.big-button:hover
+{
+    padding: 7px 10px;
+}
+
 #recommendPictureShadow
 {
     -webkit-box-shadow: 0px 0px 22px 7px rgba(0, 0, 0, 1);
@@ -367,8 +386,6 @@ img#recommendPictureBefore
     top: 0;
     z-index: 1;
 }
-
-
 
 #recommendBefore
 {
@@ -396,6 +413,7 @@ img#recommendPictureBefore
     font-size: 40px;
     margin-top: 40px;
     margin-left: 20px;
+    margin-bottom: 0;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -411,6 +429,7 @@ img#recommendPictureBefore
 {
     margin-left: 20px;
     font-size: 20px;
+    margin-bottom: 0;
 }
 
 .movie-list

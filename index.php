@@ -21,18 +21,22 @@
                         <div class="position-relative">
                             <a href="" class="movieHref">
                                 
-                                
                                 <img class="w-100" id="recommendPictureBefore">
                                 
                                 <img class="w-100" id="recommendPicture">
 
                                 <img src="img/shadow.png" class="w-100" id="recommendPictureShadow">
+                                
                             </a>
                         </div>
                     </div>
                     <div class="col-10">
                         <a href="" class="movieHref"><h3><span id="recTitle"></span> <span id="recYear"></span></h3></a>
                         <p id="recDesc"></p>
+                        <div class="big-buttons">
+                            <a href="" id="bb1" class="bg-wf big-button">Oglądaj</a>
+                            <nobr><a href="film?id='.$id.'&tytul='.$tytul.'" id="bb2" class="bg-info2 big-button">Więcej informacji</a></nobr>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -75,7 +79,7 @@
             var moviesPosters = ['https://i1.fdbimg.pl/x1/bk7zz9/400x580_kd38gs.jpg%20400w', 'https://i1.fdbimg.pl/x1/vhl8e8v1/400x580_qw7aph.jpg%20400w', 'https://i1.fdbimg.pl/x1/cm6zz9/400x580_kd389e.jpg%20400w', 'https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w', 'https://i1.fdbimg.pl/x1/ueb56fx1/400x580_ozp944.jpg%20400w'];
             var moviesTitles = ['Kac vegas', 'Forest Gump', 'Zielona mila', 'Był sobie pies', 'Interstellar'];
             var moviesYears = [2013, 2017, 2006, 1997, 2021];
-            var moviesDescs = ['Przez świąteczny pośpiech ośmioletni Kevin zostaje sam w domu na Boże Narodzenie.', 'Ekranizacja powieści Dana Browna. Tajemnicze morderstwo w Luwrze staje się kluczem do rozwiązania jednej z największych zagadek strzeżonych przez tajemnicze stowarzyszenie.', 'Podróż hobbita z Shire i jego ośmiu towarzyszy, której celem jest zniszczenie potężnego pierścienia pożądanego przez Czarnego Władcę - Saurona.', 'Rok 2004, siedziba władz lokalnych w irackiej Karbali, City Hall, zostaje zaatakowana przez Al-Kaidę i sadrystów. Grupa polskich oraz bułgarskich żołnierzy odpiera kolejne ataki.', 'By odzyskać swój dom, brzydki ogr z gadatliwym osłem wyruszają uwolnić piękną księżniczkę.'];
+            var moviesDescs = ['Gwiazda rocka, Pink, nie potrafi zaakceptować otaczającego go świata. Kiedy trafia do jednego z hoteli w Los Angeles, zaczyna rozmyślać nad swoim zyciem', 'Ekranizacja powieści Dana Browna. Tajemnicze morderstwo w Luwrze staje się kluczem do rozwiązania jednej z największych zagadek strzeżonych przez tajemnicze stowarzyszenie.', 'Podróż hobbita z Shire i jego ośmiu towarzyszy, której celem jest zniszczenie potężnego pierścienia pożądanego przez Czarnego Władcę - Saurona.', 'Rok 2004, siedziba władz lokalnych w irackiej Karbali, City Hall, zostaje zaatakowana przez Al-Kaidę i sadrystów. Grupa polskich oraz bułgarskich żołnierzy odpiera kolejne ataki.', 'By odzyskać swój dom, brzydki ogr z gadatliwym osłem wyruszają uwolnić piękną księżniczkę.'];
             var moviesIds = [5, 3, 43, 12, 32];
 
             function onload()
@@ -93,6 +97,9 @@
                 document.getElementById('recTitle').innerHTML = moviesTitles[mainRec];
                 document.getElementById('recYear').innerHTML = moviesYears[mainRec];
                 document.getElementById('recDesc').innerHTML = moviesDescs[mainRec];
+
+                document.getElementById('bb1').href = "film?id="+moviesIds[mainRec]+"&tytul="+moviesTitles[mainRec];
+                document.getElementById('bb2').href = "film?id="+moviesIds[mainRec]+"&tytul="+moviesTitles[mainRec];
 
                 var movieHref = document.getElementsByClassName('movieHref');
 
@@ -117,6 +124,9 @@
                         document.getElementById('recommendPicture').style.opacity="1";
                         
                     }, 200);
+
+                    document.getElementById('bb1').href = "film?id="+moviesIds[which]+"&tytul="+moviesTitles[which];
+                    document.getElementById('bb2').href = "film?id="+moviesIds[which]+"&tytul="+moviesTitles[which];
                     
 
                     document.getElementById('rec'+which).style="border:3px solid #fff";
