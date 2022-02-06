@@ -1,0 +1,16 @@
+### PROTECT FILES ###
+<FilesMatch "\.(htaccess|htpasswd|ini|fla|psd|log|sh)$">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
+
+RewriteEngine on
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteRule film film.php
+
+ErrorDocument 404 https://wyszukiwarkafilmow.pl/e404
+ErrorDocument 500 https://wyszukiwarkafilmow.pl
+ErrorDocument 400 https://wyszukiwarkafilmow.pl
+ErrorDocument 403 https://wyszukiwarkafilmow.pl

@@ -1,4 +1,5 @@
 <?php include 'elements/begining.php'; ?>
+<?php include 'elements/phpscripts.php'; ?>
 <!DOCTYPE HTML>
 <html lang="pl-PL">
 	<head>
@@ -7,8 +8,6 @@
         <?php include 'elements/head.php'; ?>
 	</head>
 	<body onload="onload()">
-        <?php include 'elements/phpscripts.php'; ?>
-
         <?php include 'elements/brand.php'; ?>
 
         <div class="recommend-rel">
