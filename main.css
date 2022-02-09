@@ -47,6 +47,11 @@ a:hover
     color: #ec4040;
 }
 
+.bg-wf-dark
+{
+    background-color:  rgb(20, 20, 20);
+}
+
 .header
 {
     padding: 10px 20px;
@@ -462,9 +467,10 @@ a.big-button:hover
 .movie-page
 {
     position: relative;
+    overflow: hidden;
 }
 
-.movie-page .bgimg
+.bgimg
 {
     content: "";
     position: absolute;
@@ -473,14 +479,14 @@ a.big-button:hover
     height: 100%;
     background-repeat: no-repeat;
     background-size: 100%;
-    filter: blur(3px);
-    opacity: .5;
+    filter: blur(20px);
+    opacity: .4;
     z-index:-100;
 }
 
 .movie-page .info h1
 {
-    font-size: 60px;
+    font-size: 50px;
 }
 
 .movie-page .info h1 small
@@ -497,7 +503,14 @@ a.big-button:hover
 
 .movie-page .info p
 {
-    font-size: 25px;
+    font-size: 23px;
+}
+
+.movie-page .info img
+{
+    float: left;
+    padding-right: 30px;
+    width: 250px;
 }
 
 @media screen and (max-width:1400px)
@@ -542,6 +555,16 @@ a.big-button:hover
     {
         left: -350px !important;
     }
+
+    .movie-page .info h1
+    {
+        font-size: 45px;
+    }
+
+    .movie-page .info p
+    {
+        font-size: 20px;
+    }
 }
 
 @media screen and (max-width:1100px)
@@ -577,5 +600,39 @@ a.big-button:hover
     .header .pc
     {
         display: none;
+    }
+
+    .movie-page .info img
+    {
+        float: none;
+        padding-right: 0;
+        width: 100%;
+    }
+
+    .movie-page .info h1
+    {
+        font-size: 35px;
+        margin-top: 15px;
+    }
+
+    .movie-page .info h1 small
+    {
+        font-size: 20px;
+    }
+
+    .movie-page .info p
+    {
+        text-align: left;
+        margin-top: 10px;
+    }
+
+    .movie-page .info
+    {
+        text-align: center;
+    }
+
+    .movie-page .bgimg
+    {
+        width: 130%;
     }
 }
