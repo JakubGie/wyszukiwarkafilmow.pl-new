@@ -1,3 +1,3 @@
-<div class="footer">
+<div class="footer bg-wf-dark">
     WyszukiwarkaFilmow.pl
 </div>

@@ -24,8 +24,48 @@
                     <div class="cb"></div>
                 </div>
             </div>
+
+            <div class="container-fluid bg-wf-dark movie-page-info">
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <h2>Informacje</h2>
+                        Gatunek:<br>
+                        <?php
+                            scrapGenres($gatunek);
+                        ?>
+                        <br>
+
+                        Temat:<br>
+                        <?php
+                            scrapTopics($temat);
+                        ?>
+                        <br>
+
+                        Reżyser:<br>
+                        <?php
+                            scrapdirectors($rezyser);
+                        ?>
+                        <br>
+
+                        Produkcja:<br>
+                        <?php
+                            scrapProductions($kraj);
+                        ?>
+                        <br>
+                    </div>
+                    <div class="col-12 col-sm-6 text-center">
+                        <div class="rating">
+                            <img src="img/imdb.png"> <span><?php echo $ocena_imdb; ?><small>/10</small></span>
+                        </div>
+                        <br>
+                        <div class="time bg-wf">
+                            <i class="fas fa-clock"></i> <?php movieTime($czas_trwania); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-            <div class="container-fluid bg-wf-dark">
+            <div class="container-fluid">
                 <div class="main">
                     <?php
                         if($seria!=0)
@@ -36,6 +76,11 @@
                     ?>
                     
                 </div>
+            </div>
+
+            <div class="container-fluid bg-wf-dark py-4 text-center">
+                <h2 class="mb-2">TRAILER</h2>
+                <iframe width="560" height="315" class="trailer" src="https://www.youtube.com/embed/<?php echo $zwiastun; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
 
             <script>

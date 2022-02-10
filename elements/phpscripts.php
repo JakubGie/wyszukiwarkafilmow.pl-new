@@ -134,7 +134,94 @@
         $movieSeries++;
     }
 
+    function scrapGenres($genres)
+    {
+        global $polaczenie;
 
+        $genres = str_replace('|', '', $genres);
+        $genresArray = explode(",", $genres);
+
+        for($i=0;$i<=substr_count($genres,",");$i++)
+        {
+            $zapytanie = $polaczenie->query("SELECT id, nazwa FROM gatunki WHERE id=".$genresArray[$i]."");
+
+            $row = $zapytanie->fetch_assoc();
+            
+            echo '<a href="">'.$row['nazwa'].'</a>';
+        }
+    }
+
+    function scrapTopics($topics)
+    {
+        global $polaczenie;
+
+        $topics = str_replace('|', '', $topics);
+        $topicsArray = explode(",", $topics);
+
+        for($i=0;$i<=substr_count($topics,",");$i++)
+        {
+            $zapytanie = $polaczenie->query("SELECT id, temat FROM tematy WHERE id=".$topicsArray[$i]."");
+
+            $row = $zapytanie->fetch_assoc();
+            
+            echo '<a href="">'.$row['temat'].'</a>';
+        }
+    }
+
+    function scrapDirectors($directors)
+    {
+        global $polaczenie;
+
+        $directors = str_replace('|', '', $directors);
+        $directorsArray = explode(",", $directors);
+
+        for($i=0;$i<=substr_count($directors,",");$i++)
+        {
+            $zapytanie = $polaczenie->query("SELECT id, imie, nazwisko FROM rezyserzy WHERE id=".$directorsArray[$i]."");
+
+            $row = $zapytanie->fetch_assoc();
+            
+            echo '<a href="">'.$row['imie'].' '.$row['nazwisko'].'</a>';
+        }
+    }
+
+    function scrapProductions($productions)
+    {
+        global $polaczenie;
+
+        $productions = str_replace('|', '', $productions);
+        $productionsArray = explode(",", $productions);
+
+        for($i=0;$i<=substr_count($productions,",");$i++)
+        {
+            $zapytanie = $polaczenie->query("SELECT id, nazwa FROM kraje WHERE id=".$productionsArray[$i]."");
+
+            $row = $zapytanie->fetch_assoc();
+            
+            echo '<a href="">'.$row['nazwa'].'</a>';
+        }
+    }
+
+    function movieTime($czas_trwania)
+    {
+        if($czas_trwania>=60)
+        {
+            $ile = floor($czas_trwania/60);
+            $reszta = $czas_trwania%60;
+            $czas_trwania = $ile."h ".$reszta."min";
+            if($reszta==0)
+            {
+                $czas_trwania = $ile."h";
+            }
+        }
+
+        else
+        {
+            $czas_trwania = $czas_trwania."min";
+        }
+
+        echo $czas_trwania;
+    }
 
 
     
