@@ -15,6 +15,8 @@
             <div class="bgimg" style="background-image:url('<?php echo $plakat;?>')" class="w-100"></div>
             <?php include 'elements/brand.php'; ?>
 
+
+            <div class="container">
             <div class="movie-page">
                 
                 <div class="info">
@@ -78,15 +80,18 @@
                 </div>
             </div>
 
-            <div class="container-fluid bg-wf-dark py-4 text-center">
+            <div class="container-fluid bg-wf-dark py-4 text-center mb-4">
                 <h2 class="mb-2">TRAILER</h2>
                 <iframe width="560" height="315" class="trailer" src="https://www.youtube.com/embed/<?php echo $zwiastun; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
+            </div>
+            
 
             <script>
                 function onload()
                 {
                     moreInfoWindows();
+                    containerFit();
                 }
             </script>
 

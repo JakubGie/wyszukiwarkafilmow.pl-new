@@ -99,4 +99,12 @@
         
         document.getElementById("switch").innerHTML = '<i class="fas fa-bars" onclick="showMenu()"></i>'; 
     }
+
+    function containerFit()
+    {
+        if($(window).width()<=1400)
+        {
+            document.getElementsByClassName('container')[0].classList.remove("container");
+        }
+    }
 </script>
