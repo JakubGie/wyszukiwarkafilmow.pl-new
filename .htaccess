@@ -9,6 +9,7 @@ RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 RewriteRule film film.php
+RewriteRule ogladaj ogladaj.php
 
 ErrorDocument 404 https://wyszukiwarkafilmow.pl/e404
 ErrorDocument 500 https://wyszukiwarkafilmow.pl
