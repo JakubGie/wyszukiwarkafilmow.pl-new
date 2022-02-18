@@ -110,7 +110,7 @@
                                             </a>
                                             <a href="film?id='.$id.'&tytul='.$tytul.'"><h3>'.$tytul.' <small>'.$rok_produkcji.'</small></h3></a>
                                             <p>'.$opis.'</p>
-                                            <a href="" class="button bg-wf button-first">Oglądaj</a>
+                                            <a href="ogladaj?id='.$id.'&tytul='.$tytul.'" class="button bg-wf button-first">Oglądaj</a>
                                             <a href="film?id='.$id.'&tytul='.$tytul.'" class="button bg-info2">Więcej informacji</a>
                                             <div class="cb"></div>
                                         </div>
@@ -147,7 +147,7 @@
 
             $row = $zapytanie->fetch_assoc();
             
-            echo '<a href="">'.$row['nazwa'].'</a>';
+            echo '<a href="gatunek?id='.$row['id'].'&nazwa='.$row['nazwa'].'">'.$row['nazwa'].'</a>';
         }
     }
 
@@ -164,7 +164,7 @@
 
             $row = $zapytanie->fetch_assoc();
             
-            echo '<a href="">'.$row['temat'].'</a>';
+            echo '<a href="temat?id='.$row['id'].'&nazwa='.$row['temat'].'">'.$row['temat'].'</a>';
         }
     }
 
@@ -181,7 +181,7 @@
 
             $row = $zapytanie->fetch_assoc();
             
-            echo '<a href="">'.$row['imie'].' '.$row['nazwisko'].'</a>';
+            echo '<a href="rezyser?id='.$row['id'].'&imie='.$row['imie'].'&nazwisko='.$row['nazwisko'].'">'.$row['imie'].' '.$row['nazwisko'].'</a>';
         }
     }
 
@@ -198,7 +198,7 @@
 
             $row = $zapytanie->fetch_assoc();
             
-            echo '<a href="">'.$row['nazwa'].'</a>';
+            echo '<a href="kraj?id='.$row['id'].'&nazwa='.$row['nazwa'].'">'.$row['nazwa'].'</a>';
         }
     }
 
