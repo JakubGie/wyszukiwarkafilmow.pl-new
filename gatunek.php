@@ -10,58 +10,9 @@
 	<body onload="onload()">
         <?php include 'elements/brand.php'; ?>
 
-        <div class="recommend-rel">
-            <div id="recommendBefore">
-
-            </div>
-            <div class="recommend">
-                <div class="row">
-                    <div class="col-2">
-                        <div class="position-relative">
-                            <a href="" class="movieHref">
-                                
-                                <img class="w-100" id="recommendPictureBefore">
-                                
-                                <img class="w-100" id="recommendPicture">
-
-                                <img src="img/shadow.png" class="w-100" id="recommendPictureShadow">
-                                
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-10">
-                        <a href="" class="movieHref"><h3><span id="recTitle"></span> <span id="recYear"></span></h3></a>
-                        <p id="recDesc"></p>
-                        <div class="big-buttons">
-                            <a href="" id="bb1" class="bg-wf big-button">Oglądaj</a>
-                            <nobr><a href="film?id='.$id.'&tytul='.$tytul.'" id="bb2" class="bg-info2 big-button">Więcej informacji</a></nobr>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="movie-list">
-                <img src="https://i1.fdbimg.pl/x1/bk7zz9/400x580_kd38gs.jpg%20400w" id="rec0" onclick="replaceRecommends(0)">
-                <img src="https://i1.fdbimg.pl/x1/vhl8e8v1/400x580_qw7aph.jpg%20400w" id="rec1" onclick="replaceRecommends(1)">
-                <img src="https://i1.fdbimg.pl/x1/cm6zz9/400x580_kd389e.jpg%20400w" id="rec2" onclick="replaceRecommends(2)">
-                <img src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w" id="rec3" onclick="replaceRecommends(3)">
-                <img src="https://i1.fdbimg.pl/x1/ueb56fx1/400x580_ozp944.jpg%20400w" id="rec4" onclick="replaceRecommends(4)">
-            </div>
-        </div>
         <div class="container-fluid">
             <div class="main">
-                <h2 class="mt-3">NA CZASIE</h2>
-
-                <div class="time-switch mb-2">
-                    <span>dzień</span> 
-                    <span class="checked"><b>tydzień</b></span> 
-                    <span>miesiąc</span> 
-                    <span>rok</span>
-                </div>
-                
-                <?php loadMovie("SELECT id, tytul, opis, rok_produkcji, plakat FROM filmy", 23, 0, 0); ?> 
-
-                
-                <h2 class="mt-3">POPULARNE SERIALE</h2>
+                <h2 class="mt-3"><h2 class="mt-3">KOLEKCJA ""</h2></h2>
 
                 <?php loadMovie("SELECT * FROM filmy WHERE gatunek LIKE '%|4|%' ORDER BY ocena_imdb DESC",  10, 0, 0); ?> 
 
@@ -97,7 +48,7 @@
                 document.getElementById('recYear').innerHTML = moviesYears[mainRec];
                 document.getElementById('recDesc').innerHTML = moviesDescs[mainRec];
 
-                document.getElementById('bb1').href = "ogladaj?id="+moviesIds[mainRec]+"&tytul="+moviesTitles[mainRec];
+                document.getElementById('bb1').href = "film?id="+moviesIds[mainRec]+"&tytul="+moviesTitles[mainRec];
                 document.getElementById('bb2').href = "film?id="+moviesIds[mainRec]+"&tytul="+moviesTitles[mainRec];
 
                 var movieHref = document.getElementsByClassName('movieHref');
@@ -107,7 +58,7 @@
                 }
             }
 
-            function replaceRecommends(which)
+            function podmienPolecane(which)
             {
                 if(which!=mainRec)
                 {
@@ -124,7 +75,7 @@
                         
                     }, 200);
 
-                    document.getElementById('bb1').href = "ogladaj?id="+moviesIds[which]+"&tytul="+moviesTitles[which];
+                    document.getElementById('bb1').href = "film?id="+moviesIds[which]+"&tytul="+moviesTitles[which];
                     document.getElementById('bb2').href = "film?id="+moviesIds[which]+"&tytul="+moviesTitles[which];
                     
 
