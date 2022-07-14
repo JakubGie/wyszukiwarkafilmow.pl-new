@@ -40,11 +40,11 @@
                 </div>
             </div>
             <div class="movie-list">
-                <img src="https://i1.fdbimg.pl/x1/bk7zz9/400x580_kd38gs.jpg%20400w" id="rec0" onclick="podmienPolecane(0)">
-                <img src="https://i1.fdbimg.pl/x1/vhl8e8v1/400x580_qw7aph.jpg%20400w" id="rec1" onclick="podmienPolecane(1)">
-                <img src="https://i1.fdbimg.pl/x1/cm6zz9/400x580_kd389e.jpg%20400w" id="rec2" onclick="podmienPolecane(2)">
-                <img src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w" id="rec3" onclick="podmienPolecane(3)">
-                <img src="https://i1.fdbimg.pl/x1/ueb56fx1/400x580_ozp944.jpg%20400w" id="rec4" onclick="podmienPolecane(4)">
+                <img src="https://i1.fdbimg.pl/x1/bk7zz9/400x580_kd38gs.jpg%20400w" id="rec0" onclick="replaceRecommends(0)">
+                <img src="https://i1.fdbimg.pl/x1/vhl8e8v1/400x580_qw7aph.jpg%20400w" id="rec1" onclick="replaceRecommends(1)">
+                <img src="https://i1.fdbimg.pl/x1/cm6zz9/400x580_kd389e.jpg%20400w" id="rec2" onclick="replaceRecommends(2)">
+                <img src="https://i1.fdbimg.pl/x1/0bdtmk/400x580_knk94i.jpg%20400w" id="rec3" onclick="replaceRecommends(3)">
+                <img src="https://i1.fdbimg.pl/x1/ueb56fx1/400x580_ozp944.jpg%20400w" id="rec4" onclick="replaceRecommends(4)">
             </div>
         </div>
         <div class="container-fluid">
@@ -107,7 +107,7 @@
                 }
             }
 
-            function podmienPolecane(which)
+            function replaceRecommends(which)
             {
                 if(which!=mainRec)
                 {
